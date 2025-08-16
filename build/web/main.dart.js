@@ -32965,12 +32965,14 @@ s=r+1}r=B.c.dN(a,b)
 for(;r!==-1;){q=r===0?0:B.c.FK(a,"\n",r-1)+1
 if(c===r-q)return q
 r=B.c.jE(a,b,r+1)}return null},
-aTC(){switch("production"){case"development":return"http://localhost:3000/api"
-case"staging":return"http://54.80.7.27/api"
-case"production":default:return"https://54.80.7.27/api"}},
-bb3(){switch("production"){case"development":return"ws://localhost:3000"
-case"staging":return"ws://54.80.7.27/ws"
-case"production":default:return"wss://54.80.7.27/ws"}},
+aTC(){var s="https://54.80.7.27/api"
+switch("production"){case"development":return"http://localhost:3000/api"
+case"staging":return s
+case"production":default:return s}},
+bb3(){var s="wss://54.80.7.27/ws"
+switch("production"){case"development":return"ws://localhost:3000"
+case"staging":return s
+case"production":default:return s}},
 PR(){var s=B.j.br(0.95),r=A.ai(20),q=A.a([new A.b2(0,B.D,B.o.br(0.1),B.V2,20)],t.V)
 return new A.ao(s,null,A.eg(B.j.br(0.2),B.u,1),r,q,null,B.t)},
 aXo(){var s=B.j.br(0.1),r=A.ai(20)

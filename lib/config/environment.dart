@@ -13,7 +13,7 @@ class Environment {
       case 'development':
         return 'http://localhost:3000/api';
       case 'staging':
-        return 'http://54.80.7.27/api';  // Through nginx proxy
+        return 'https://54.80.7.27/api';  // HTTPS with self-signed cert
       case 'production':
       default:
         // Use HTTPS with self-signed certificate
@@ -26,7 +26,7 @@ class Environment {
       case 'development':
         return 'ws://localhost:3000';
       case 'staging':
-        return 'ws://54.80.7.27/ws';     // Through nginx proxy
+        return 'wss://54.80.7.27/ws';    // WSS with self-signed cert
       case 'production':
       default:
         // Use WSS with self-signed certificate
