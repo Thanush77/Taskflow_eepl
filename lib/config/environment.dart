@@ -16,8 +16,8 @@ class Environment {
         return 'http://54.80.7.27/api';  // Through nginx proxy
       case 'production':
       default:
-        // Use HTTPS if available, fallback to HTTP
-        return 'https://54.80.7.27/api';  // Try HTTPS first for production
+        // Temporarily use HTTP until HTTPS is configured
+        return 'http://54.80.7.27/api';  // Using HTTP for now
     }
   }
 
@@ -29,8 +29,8 @@ class Environment {
         return 'ws://54.80.7.27/ws';     // Through nginx proxy
       case 'production':
       default:
-        // Use WSS for secure WebSocket in production
-        return 'wss://54.80.7.27/ws';    // Secure WebSocket for production
+        // Use WS until HTTPS is configured
+        return 'ws://54.80.7.27/ws';     // Using WS for now
     }
   }
 

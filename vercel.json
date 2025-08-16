@@ -1,5 +1,5 @@
 {
-  "buildCommand": null,
+  "buildCommand": "echo 'Please build locally and commit the build folder'",
   "outputDirectory": "build/web",
   "framework": null,
   "rewrites": [
