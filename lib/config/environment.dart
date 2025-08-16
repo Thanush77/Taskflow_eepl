@@ -16,8 +16,8 @@ class Environment {
         return 'http://54.80.7.27/api';  // Through nginx proxy
       case 'production':
       default:
-        // Temporarily use HTTP until HTTPS is configured
-        return 'http://54.80.7.27/api';  // Using HTTP for now
+        // Use HTTPS with self-signed certificate
+        return 'https://54.80.7.27/api';  // HTTPS with self-signed cert
     }
   }
 
@@ -29,8 +29,8 @@ class Environment {
         return 'ws://54.80.7.27/ws';     // Through nginx proxy
       case 'production':
       default:
-        // Use WS until HTTPS is configured
-        return 'ws://54.80.7.27/ws';     // Using WS for now
+        // Use WSS with self-signed certificate
+        return 'wss://54.80.7.27/ws';    // WSS with self-signed cert
     }
   }
 
