@@ -13,11 +13,11 @@ class Environment {
       case 'development':
         return 'http://localhost:3000/api';
       case 'staging':
-        return 'https://54.80.7.27/api';  // HTTPS with self-signed cert
+        return 'http://54.80.7.27/api';  // HTTP for local development
       case 'production':
       default:
-        // Use HTTPS with self-signed certificate
-        return 'https://54.80.7.27/api';  // HTTPS with self-signed cert
+        // Use HTTP to avoid certificate issues in development
+        return 'http://54.80.7.27/api';  // HTTP for local development
     }
   }
 
@@ -26,11 +26,11 @@ class Environment {
       case 'development':
         return 'ws://localhost:3000';
       case 'staging':
-        return 'wss://54.80.7.27/ws';    // WSS with self-signed cert
+        return 'ws://54.80.7.27/ws';    // WS for local development
       case 'production':
       default:
-        // Use WSS with self-signed certificate
-        return 'wss://54.80.7.27/ws';    // WSS with self-signed cert
+        // Use WS to avoid certificate issues in development
+        return 'ws://54.80.7.27/ws';    // WS for local development
     }
   }
 

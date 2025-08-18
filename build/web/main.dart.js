@@ -32965,11 +32965,11 @@ s=r+1}r=B.c.dN(a,b)
 for(;r!==-1;){q=r===0?0:B.c.FK(a,"\n",r-1)+1
 if(c===r-q)return q
 r=B.c.jE(a,b,r+1)}return null},
-aTC(){var s="https://54.80.7.27/api"
+aTC(){var s="http://54.80.7.27/api"
 switch("production"){case"development":return"http://localhost:3000/api"
 case"staging":return s
 case"production":default:return s}},
-bb3(){var s="wss://54.80.7.27/ws"
+bb3(){var s="ws://54.80.7.27/ws"
 switch("production"){case"development":return"ws://localhost:3000"
 case"staging":return s
 case"production":default:return s}},

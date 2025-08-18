@@ -1,0 +1,14 @@
+  [build]
+    base = "taskflow_flutter"
+    publish = "build/web"
+    command = "echo 'Using pre-built files'"
+
+  [[redirects]]
+    from = "/*"
+    to = "/index.html"
+    status = 200
+  EOF
+
+  git add netlify.toml
+  git commit -m "Add Netlify configuration"
+  git push origin main

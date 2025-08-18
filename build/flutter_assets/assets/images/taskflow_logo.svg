@@ -1,0 +1,50 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Primary Gradient -->
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    
+    <!-- Secondary Gradient -->
+    <linearGradient id="secondaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f3f4f6"/>
+      <stop offset="100%" style="stop-color:#ffffff"/>
+    </linearGradient>
+    
+    <!-- Shadow -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#6366f1" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="240" fill="url(#primaryGradient)" filter="url(#shadow)"/>
+  
+  <!-- Main Task Icon - Checkmark in Circle -->
+  <circle cx="180" cy="200" r="45" fill="url(#secondaryGradient)" stroke="#ffffff" stroke-width="4"/>
+  <path d="M160 200 L175 215 L200 185" stroke="#6366f1" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Flow Lines - Representing workflow -->
+  <path d="M240 200 L350 200" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+  <path d="M240 240 L380 240" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
+  <path d="M240 280 L320 280" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+  
+  <!-- Secondary Task Icons -->
+  <circle cx="360" cy="200" r="20" fill="#ffffff" opacity="0.9"/>
+  <path d="M350 200 L357 207 L370 190" stroke="#6366f1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <circle cx="390" cy="240" r="16" fill="#ffffff" opacity="0.7"/>
+  <path d="M383 240 L388 245 L397 233" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <circle cx="330" cy="280" r="12" fill="#ffffff" opacity="0.5"/>
+  <path d="M325 280 L329 284 L335 275" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Accent Elements - Representing collaboration -->
+  <circle cx="200" cy="340" r="8" fill="#ffffff" opacity="0.6"/>
+  <circle cx="230" cy="350" r="6" fill="#ffffff" opacity="0.4"/>
+  <circle cx="260" cy="345" r="4" fill="#ffffff" opacity="0.3"/>
+  
+  <!-- Brand Text Path (hidden but defines the concept) -->
+  <!-- T for Task, F for Flow represented in the design -->
+</svg>

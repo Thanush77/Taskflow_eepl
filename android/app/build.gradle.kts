@@ -5,10 +5,13 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
-def keystoreProperties = new Properties()
-def keystorePropertiesFile = rootProject.file('app/key.properties')
+import java.util.Properties
+import java.io.FileInputStream
+
+val keystoreProperties = Properties()
+val keystorePropertiesFile = rootProject.file("app/key.properties")
 if (keystorePropertiesFile.exists()) {
-    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
 }
 
 android {
@@ -38,19 +41,28 @@ android {
     }
 
     signingConfigs {
-        release {
-            keyAlias = keystoreProperties['keyAlias']
-            keyPassword = keystoreProperties['keyPassword']
-            storeFile = keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-            storePassword = keystoreProperties['storePassword']
+        create("release") {
+            if (keystorePropertiesFile.exists()) {
+                keyAlias = keystoreProperties["keyAlias"] as String?
+                keyPassword = keystoreProperties["keyPassword"] as String?
+                storeFile = keystoreProperties["storeFile"]?.let { file(it) }
+                storePassword = keystoreProperties["storePassword"] as String?
+            }
         }
     }
     
     buildTypes {
         release {
-            signingConfig = signingConfigs.release
-            minifyEnabled = true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig = if (keystorePropertiesFile.exists()) {
+                signingConfigs.getByName("release")
+            } else {
+                signingConfigs.getByName("debug")
+            }
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 }
